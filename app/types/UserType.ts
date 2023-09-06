@@ -1,4 +1,5 @@
 import { PostType } from "./PostType";
+import { ProfileType } from "./ProfileType";
 
 export interface UserType {
   id: number;
@@ -6,4 +7,5 @@ export interface UserType {
   email: string;
   password: string;
   posts: PostType[];
+  profile: ProfileType;
 }
