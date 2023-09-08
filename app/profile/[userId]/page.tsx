@@ -17,6 +17,7 @@ const UserProfile = async ({ params }: { params: { userId: string } }) => {
   const posts: PostType[] = await apiClient
     .get(`/posts/${userId}`)
     .then((res) => res.data);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="w-full max-w-xl mx-auto">
@@ -37,7 +38,7 @@ const UserProfile = async ({ params }: { params: { userId: string } }) => {
         </div>
 
         {posts.map((post: PostType) => (
-          <div className="bg-white shadow-md rounded p-4 mb-4">
+          <div key={post.id} className="bg-white shadow-md rounded p-4 mb-4">
             <div className="mb-4">
               <div className="flex items-center mb-2">
                 <img
