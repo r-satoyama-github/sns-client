@@ -1,41 +1,40 @@
+import Profile from "@/app/components/Profile";
 import apiClient from "@/app/lib/apiClient";
 import { PostType } from "@/app/types/PostType";
 import { ProfileType } from "@/app/types/ProfileType";
 import { error } from "console";
 import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
-import React from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
+const getProfile = async (userId: string) => {
+  return await apiClient.get(`/user/profile/${userId}`).then((res) => res.data);
+};
+
+const getPosts = async (userId: string) => {
+  return await apiClient.get(`/posts/${userId}`).then((res) => res.data);
+};
 const UserProfile = async ({ params }: { params: { userId: string } }) => {
   const { userId } = params;
 
-  const profile: ProfileType = await apiClient
-    .get(`/user/profile/${userId}`)
-    .then((res) => res.data)
-    .catch((error) => notFound());
+  // const profile: ProfileType = await apiClient
+  //   .get(`/user/profile/${userId}`)
+  //   .then((res) => res.data)
+  //   .catch((error) => notFound());
 
-  const posts: PostType[] = await apiClient
-    .get(`/posts/${userId}`)
-    .then((res) => res.data);
+  // const posts: PostType[] = await apiClient
+  //   .get(`/posts/${userId}`)
+  //   .then((res) => res.data);
+
+  const profile = await getProfile(userId);
+  const posts = await getPosts(userId);
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="w-full max-w-xl mx-auto">
-        <div className="bg-white shadow-md rounded-lg p-6 mb-4">
-          <div className="flex items-center">
-            <img
-              className="w-20 h-20 rounded-full mr-4"
-              alt="User Avatar"
-              src={profile.profileImageUrl}
-            />
-            <div>
-              <h2 className="text-2xl font-semibold mb-1">
-                {profile.user.username}
-              </h2>
-              <p className="text-gray-600">{profile.bio}</p>
-            </div>
-          </div>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Profile profile={profile} />
+        </Suspense>
 
         {posts.map((post: PostType) => (
           <div key={post.id} className="bg-white shadow-md rounded p-4 mb-4">
