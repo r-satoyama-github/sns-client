@@ -46,7 +46,7 @@ const Profile = (props: Props) => {
           {isEdit ? (
             <div className="container flex w-full justify-between items-center">
               <input
-                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 w-6/12"
+                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 text-xs md:text-sm md:w-full"
                 type="text"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
@@ -55,7 +55,7 @@ const Profile = (props: Props) => {
               <button
                 type="button"
                 onClick={(e) => handleEditButton(e)}
-                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded"
+                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm"
               >
                 保存
               </button>
