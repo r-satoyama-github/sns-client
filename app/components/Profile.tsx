@@ -32,7 +32,7 @@ const Profile = (props: Props) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4">
+    <div className="bg-white shadow-md rounded-lg py-6 px-3 mb-4">
       <div className="flex items-center w-full">
         <img
           className="w-20 h-20 rounded-full mr-4"
@@ -44,9 +44,9 @@ const Profile = (props: Props) => {
             {profile.user.username}
           </h2>
           {isEdit ? (
-            <div className="container w-full justify-between items-center grid grid-cols-4">
+            <div className="container w-full justify-between items-center flex">
               <input
-                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 text-xs md:text-sm w-full col-span-3"
+                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 text-xs md:text-sm w-full flex-grow"
                 type="text"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
@@ -55,20 +55,20 @@ const Profile = (props: Props) => {
               <button
                 type="button"
                 onClick={(e) => handleEditButton(e)}
-                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm ml-3"
+                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm col-span-2 w-16 md:w-24 ml-1"
               >
                 保存
               </button>
             </div>
           ) : (
-            <div className="container w-full justify-between items-center grid grid-cols-4">
-              <p className="text-gray-600 px-2 py-1 text-xs md:text-sm col-span-3">
+            <div className="container w-full justify-between items-center flex">
+              <p className="text-gray-600 px-2 py-1 text-xs md:text-sm flex-grow">
                 {bio}
               </p>
               <button
                 type="button"
                 onClick={(e) => handleEditButton(e)}
-                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm ml-3"
+                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm   w-16 md:w-24"
               >
                 編集
               </button>
