@@ -38,18 +38,15 @@ const Login = () => {
   return (
     <div
       style={{ height: "88vh" }}
-      className="flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+      className="flex flex-col justify-center py-12 sm:px-6 lg:px-8 w-full"
     >
-      <Head>
-        <title>ログイン</title>
-      </Head>
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="mx-auto w-full max-w-md flex justify-center">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           アカウントにログイン
         </h2>
       </div>
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div className="mt-8 sm:mx-auto flex justify-center items-center w-full">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 rounded-md w-9/12 max-w-md">
           <form onSubmit={handleSubmit}>
             <div>
               <label

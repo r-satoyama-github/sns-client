@@ -22,7 +22,7 @@ const Navbar = () => {
     <header className="bg-gray-700 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="font-semibold text-xl">
-          <Link href="/">SNS Clone</Link>
+          <Link href="/">MOJIITO</Link>
         </h1>
         <nav
           className={
@@ -42,7 +42,7 @@ const Navbar = () => {
               <>
                 <Link
                   href={`/profile/${user.id}`}
-                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium"
+                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium w-44 text-center "
                   onClick={handleMenuClose}
                 >
                   プロフィール
@@ -50,7 +50,7 @@ const Navbar = () => {
                 <Link
                   href="/"
                   onClick={handleMenuCloseLogout}
-                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium"
+                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium w-44 text-center"
                 >
                   ログアウト
                 </Link>
@@ -60,14 +60,14 @@ const Navbar = () => {
                 <Link
                   href="/login"
                   onClick={handleMenuClose}
-                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium"
+                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium w-44 text-center"
                 >
                   ログイン
                 </Link>
                 <Link
                   href="/signup"
                   onClick={handleMenuClose}
-                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium"
+                  className="bg-white text-gray-900 py-2 px-3 rounded-lg font-medium w-44 text-center"
                 >
                   サインアップ
                 </Link>

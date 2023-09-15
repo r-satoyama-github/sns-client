@@ -44,9 +44,9 @@ const Profile = (props: Props) => {
             {profile.user.username}
           </h2>
           {isEdit ? (
-            <div className="container flex w-full justify-between items-center">
+            <div className="container w-full justify-between items-center grid grid-cols-4">
               <input
-                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 text-xs md:text-sm md:w-full"
+                className="border-gray-300 bg-gray-100 px-2 py-1 rounded text-gray-600 text-xs md:text-sm w-full col-span-3"
                 type="text"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
@@ -55,20 +55,20 @@ const Profile = (props: Props) => {
               <button
                 type="button"
                 onClick={(e) => handleEditButton(e)}
-                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm"
+                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm ml-3"
               >
                 保存
               </button>
             </div>
           ) : (
-            <div className="container flex w-full justify-between items-center">
-              <p className="text-gray-600 px-2 py-1 text-xs md:text-sm">
+            <div className="container w-full justify-between items-center grid grid-cols-4">
+              <p className="text-gray-600 px-2 py-1 text-xs md:text-sm col-span-3">
                 {bio}
               </p>
               <button
                 type="button"
                 onClick={(e) => handleEditButton(e)}
-                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm"
+                className="bg-gray-700 hover:bg-green-700 duration-200 text-white font-semibold py-2 px-4 rounded text-xs md:text-sm ml-3"
               >
                 編集
               </button>
